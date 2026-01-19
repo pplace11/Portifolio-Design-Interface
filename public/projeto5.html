@@ -82,28 +82,47 @@
         </div>
     </div>
     
-    <!-- Seção principal com conteúdo da página -->
+    <!-- Conteúdo principal da página -->
     <main class="container">
-        <!-- Artigo com conteúdo educativo (blog post) -->
+        <!-- Artigo educacional sobre tendências visuais em design -->
         <article class="post-blog">
-            <!-- Título principal do projeto -->
-            <h1>Tendências Visuais Atuais</h1>
+            <!-- Título principal do artigo -->
+            <h1>Tendências Visuais</h1>
             
-            <!-- Seção com conteúdo da matéria -->
+            <!-- Seção com tendências e desafios de design -->
             <section class="conteudo-materia">
-                <!-- Parágrafo introdutório sobre tendências de design -->
-                <p>O design evolui constantemente. Algumas das tendências em alta incluem:</p>
-                
-                <!-- Lista com as principais tendências visuais -->
+                <!-- Lista de tendências atuais em design de interfaces -->
+                <h2>Tendências Visuais Atuais</h2>
+                <p>O design de interfaces está em constante evolução. Abaixo estão alguns dos estilos visuais em alta:</p>
                 <ul>
-                    <li><strong>Maximalismo Criativo:</strong> Layouts ousados e cores vibrantes ("mais é mais").</li>
-                    <li><strong>Neomorfismo:</strong> Simulação de objetos 3D usando sombras suaves.</li>
-                    <li><strong>Retro-Futurismo:</strong> Nostalgia dos anos 80/90 com toques modernos.</li>
-                    <li><strong>Tipografia Experimental:</strong> Onde a letra se torna a própria imagem principal.</li>
+                    <li><strong>Maximalismo Criativo:</strong> Layouts ousados, cores vibrantes e tipografia excêntrica ("mais é mais").</li>
+                    <li><strong>Retro-Futurismo & Nostalgia:</strong> Estéticas das décadas de 70 a 90, com neon, glitch effects e pixel art.</li>
+                    <li><strong>Neomorfismo (Neumorfismo):</strong> Simulação de objetos 3D com sombras e brilhos suaves, criando um visual tátil.</li>
+                    <li><strong>3D Hiper-Realista e Texturas:</strong> Uso de modelos detalhados e texturas realistas (vidro, metal) para experiências imersivas.</li>
+                    <li><strong>Tipografia Experimental:</strong> Fontes irregulares e distorcidas que assumem o papel de protagonista do design.</li>
+                </ul>
+
+                <!-- Desafios ao adaptar designs para múltiplos ecrãs -->
+                <h2>Desafios Visuais em Designs Responsivos</h2>
+                <p>Adaptar o design para diferentes ecrãs traz desafios técnicos e estéticos específicos:</p>
+
+                <!-- Seção sobre legibilidade em desktop vs mobile -->
+                <h3>Legibilidade e Conforto Visual</h3>
+                <p>No desktop, o texto pode ocupar áreas largas, mas no mobile, colunas muito largas tornam a leitura desconfortável. Recomenda-se manter entre 60-75 caracteres por linha e usar unidades relativas (rem/em).</p>
+
+                <!-- Seção sobre hierarquia visual responsiva -->
+                <h3>Hierarquia Visual (Títulos)</h3>
+                <p>A diferença de tamanho entre títulos (H1, H2) deve ser reduzida no mobile (Escala Modular Responsiva) para evitar que ocupem demasiado espaço, mantendo a clareza.</p>
+
+                <!-- Seção sobre interação tátil e feedback visual -->
+                <h3>Interação Tátil vs. Cursor</h3>
+                <ul>
+                    <li><strong>Tamanho da Área de Toque:</strong> No mobile, os alvos de toque devem ter no mínimo 44x44 pixels para serem acionados facilmente pelo dedo.</li>
+                    <li><strong>Feedback Visual:</strong> Como o efeito "hover" não existe no toque, é crucial usar estados visuais claros (active/focus) para confirmar ações.</li>
                 </ul>
             </section>
             
-            <!-- Link para voltar à página de trabalhos -->
+            <!-- Botão para retornar à página de trabalhos -->
             <a href="../public/trabalho.html" class="btn-voltar">← Voltar</a>
         </article>
     </main>
