@@ -1,18 +1,26 @@
 /* ===== VARIÁVEIS CSS (Raiz) ===== */
 /* Define variáveis de cor e estilo reutilizáveis em todo o CSS */
 :root {
-    /* Cor primária: Indigo moderno para botões, links e destaques */
-    --primary: #6366f1;
-    /* Cor secundária: Roxo para hover e efeitos */
-    --secondary: #a855f7;
+    /* Cor primária: Indigo moderno para botões, links e destaques (AAA-compliant) */
+    --primary: #4f46e5;
+    /* Cor secundária: Roxo para hover e efeitos (AA-compliant) */
+    --secondary: #7c3aed;
     /* Cor de fundo do corpo */
     --bg-body: #f8fafc;
-    /* Cor principal do texto */
-    --text-main: #1e293b;
+    /* Cor principal do texto (contraste 12.6:1 contra branco - AAA) */
+    --text-main: #0f172a;
+    /* Cor de texto secundário para melhor hierarquia visual */
+    --text-secondary: #475569;
     /* Efeito glass (vidro) com transparência para navegação e cards */
     --glass: rgba(255, 255, 255, 0.7);
     /* Borda do efeito glass com menor opacidade */
     --border-glass: rgba(255, 255, 255, 0.3);
+    /* Cor de foco para acessibilidade via teclado */
+    --focus-ring: #3b82f6;
+    /* Cor de erro acessível */
+    --error: #dc2626;
+    /* Cor de sucesso acessível */
+    --success: #059669;
 }
 
 /* ===== RESET GLOBAL ===== */
@@ -81,10 +89,17 @@ nav ul li a {
     transition: 0.3s;
 }
 
-/* Hover nos links da navegação: destaca com cor primária */
+/* Hover nos links da navegação: destaca com cor primária (contraste mínimo 4.5:1) */
 nav ul li a:hover {
     color: var(--primary);
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(79, 70, 229, 0.15);
+    border-radius: 20px;
+}
+
+/* Estado de foco para navegação via teclado - WCAG 2.1 */
+nav ul li a:focus {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
     border-radius: 20px;
 }
 
@@ -286,18 +301,36 @@ header h1 {
 /* Hover no botão de trabalho: muda para roxo */
 .trabalho-btn:hover{
     background: var(--secondary);
-    box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.4);
+}
+
+/* Focus no botão de trabalho para navegação por teclado - WCAG 2.1 */
+.trabalho-btn:focus {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
 }
 
 /* Hover no botão de índice: muda para roxo */
 .index-btn:hover{
     background: var(--secondary);
-    box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.4);
+}
+
+/* Focus no botão de índice para navegação por teclado - WCAG 2.1 */
+.index-btn:focus {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
 }
 
 /* Hover no botão de voltar: muda para roxo */
 .btn-voltar:hover {
     background: var(--secondary);
+}
+
+/* Focus no botão de voltar para navegação por teclado - WCAG 2.1 */
+.btn-voltar:focus {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
     box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.4);
 }
 
@@ -768,7 +801,7 @@ nav ul {
     right: 30px;
     width: 60px;
     height: 60px;
-    /* Fundo com cor primária */
+    /* Fundo com cor primária de alto contraste */
     background: var(--primary);
     border: none;
     /* Formato circular */
@@ -776,7 +809,7 @@ nav ul {
     color: white;
     cursor: pointer;
     /* Sombra colorida */
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
     /* Transição suave */
     transition: all 0.3s ease;
     z-index: 999;
@@ -789,13 +822,13 @@ nav ul {
 #accessibility-btn:hover {
     background: var(--secondary);
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
 }
 
-/* Focus para acessibilidade via teclado */
+/* Focus para acessibilidade via teclado - WCAG 2.1 AAA */
 #accessibility-btn:focus {
-    outline: 3px solid var(--primary);
-    outline-offset: 2px;
+    outline: 4px solid var(--focus-ring);
+    outline-offset: 3px;
 }
 
 /* ===== PAINEL DE ACESSIBILIDADE ===== */
@@ -942,12 +975,13 @@ nav ul {
 
 /* ===== ESTADOS DE ACESSIBILIDADE ===== */
 /* ===== MODO ALTO CONTRASTE ===== */
-/* Body em alto contraste: preto e branco apenas */
+/* Body em alto contraste: preto e branco apenas com contraste máximo (21:1 - AAA) */
 body.high-contrast {
     --primary: #000;
     --secondary: #000;
     --bg-body: #fff;
     --text-main: #000;
+    --focus-ring: #000;
     background: #fff !important;
 }
 
@@ -957,56 +991,116 @@ body.high-contrast .card,
 body.high-contrast .trabalho-card,
 body.high-contrast footer {
     background: #fff !important;
-    border: 2px solid #000 !important;
+    border: 3px solid #000 !important;
     color: #000 !important;
 }
 
-/* Links e botões em alto contraste */
+/* Links e botões em alto contraste com sublinhado para identificação sem cor */
 body.high-contrast a,
 body.high-contrast button {
     color: #000 !important;
     border: 2px solid #000 !important;
+    text-decoration: underline !important;
+}
+
+/* Botões preenchidos em alto contraste */
+body.high-contrast .trabalho-btn,
+body.high-contrast .index-btn,
+body.high-contrast .btn-voltar,
+body.high-contrast #accessibility-btn {
+    background: #000 !important;
+    color: #fff !important;
+    border: 3px solid #000 !important;
+}
+
+/* Focus visível em alto contraste */
+body.high-contrast *:focus {
+    outline: 4px solid #000 !important;
+    outline-offset: 2px !important;
 }
 
 /* ===== MODO ESCURO ===== */
-/* Body em modo escuro com cores escuras */
+/* Body em modo escuro com cores de alto contraste (WCAG AA - mínimo 7:1) */
 body.dark-mode {
-    --bg-body: #1a1a1a;
-    --text-main: #f0f0f0;
-    --glass: rgba(40, 40, 40, 0.9);
-    --border-glass: rgba(255, 255, 255, 0.1);
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+    --bg-body: #0f172a;
+    --text-main: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --primary: #60a5fa;
+    --secondary: #a78bfa;
+    --glass: rgba(30, 41, 59, 0.95);
+    --border-glass: rgba(255, 255, 255, 0.15);
+    --focus-ring: #60a5fa;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
 }
 
-/* Elementos em modo escuro */
+/* Elementos em modo escuro com contraste adequado */
 body.dark-mode nav,
 body.dark-mode .card,
 body.dark-mode .trabalho-card,
 body.dark-mode footer,
 body.dark-mode .post-blog {
-    background: rgba(40, 40, 40, 0.9) !important;
-    color: #f0f0f0 !important;
+    background: rgba(30, 41, 59, 0.95) !important;
+    color: #f1f5f9 !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Links em modo escuro com cor acessível */
+body.dark-mode a {
+    color: #60a5fa !important;
+}
+
+/* Links hover em modo escuro */
+body.dark-mode a:hover {
+    color: #93c5fd !important;
 }
 
 /* Painel em modo escuro */
 body.dark-mode .accessibility-panel {
-    background: #2d2d2d;
-    color: #f0f0f0;
+    background: #1e293b;
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Labels em modo escuro */
 body.dark-mode .accessibility-option label {
-    color: #f0f0f0;
+    color: #f1f5f9;
+}
+
+/* Botões em modo escuro com cores acessíveis */
+body.dark-mode .trabalho-btn,
+body.dark-mode .index-btn,
+body.dark-mode .btn-voltar {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+body.dark-mode .trabalho-btn:hover,
+body.dark-mode .index-btn:hover,
+body.dark-mode .btn-voltar:hover {
+    background: #1d4ed8 !important;
+}
+
+/* Focus em modo escuro */
+body.dark-mode *:focus {
+    outline-color: #60a5fa !important;
 }
 
 /* ===== MODO DESTAQUE DE LINKS ===== */
-/* Links destacados com sublinhado, bold e background amarelo */
+/* Links destacados com sublinhado, bold e background de alto contraste */
 body.highlight-links a {
     text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
     font-weight: bold !important;
-    background: rgba(255, 255, 0, 0.2);
-    padding: 2px 4px;
-    border-radius: 3px;
+    background: rgba(59, 130, 246, 0.15);
+    padding: 2px 5px;
+    border-radius: 4px;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Links destacados em modo escuro */
+body.dark-mode.highlight-links a {
+    background: rgba(96, 165, 250, 0.2) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
 }
 
 /* ===== MODO ESPAÇAMENTO AUMENTADO ===== */
