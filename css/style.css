@@ -486,15 +486,13 @@ header h1 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: var(--spacing-md);
-    transition: transform var(--duration) var(--ease), letter-spacing var(--duration) var(--ease);
     letter-spacing: -1px;
     font-weight: 800;
 }
 
-/* Hover no h1 do header */
+/* Hover no h1 do header - sem animação */
 header h1:hover {
-    transform: scale(1.03) translateY(-3px);
-    letter-spacing: 0px;
+    /* Sem efeito de animação */
 }
 
 /* Parágrafo do header com espaçamento */
@@ -802,15 +800,12 @@ nav {
     height: 60px;
     width: auto;
     display: block;
-    /* Transição suave ao hover */
-    transition: all var(--duration) var(--ease);
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
-/* Hover no logo: amplia um pouco e gira levemente */
+/* Hover no logo - sem animação */
 .logo img:hover {
-    transform: scale(1.1) rotate(2deg);
-    filter: drop-shadow(0 8px 12px rgba(79, 70, 229, 0.3));
+    /* Sem efeito de hover */
 }
 
 /* ===== RODAPÉ ===== */
@@ -1938,15 +1933,13 @@ h1 {
     50% { text-shadow: 0 0 35px rgba(79, 70, 229, 0.18); }
 }
 
-/* Hover dramático no logo com rotação */
+/* Logo - sem animação */
 .logo img {
-    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                filter 0.4s var(--ease);
+    /* Sem transição */
 }
 
 .logo:hover img {
-    transform: rotate(8deg) scale(1.12);
-    filter: drop-shadow(0 6px 12px rgba(79, 70, 229, 0.35));
+    /* Sem efeito ao hover */
 }
 
 /* Efeito de highlight personalizado ao selecionar texto */
