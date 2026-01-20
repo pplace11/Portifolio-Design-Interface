@@ -96,6 +96,13 @@
                     <span>Aumentar Espaçamento</span>
                 </label>
             </div>
+            <!-- Opção para ativar leitura de voz (Text-to-Speech) -->
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="text-to-speech" aria-label="Ativar leitura de voz do conteúdo da página">
+                    <span>Leitura de Voz</span>
+                </label>
+            </div>
             <!-- Botão para restaurar todas as configurações aos valores padrão -->
             <div class="accessibility-option">
                 <button id="reset-accessibility" class="reset-btn" aria-label="Restaurar todas as configurações de acessibilidade aos valores padrão">Restaurar Padrões</button>
@@ -112,6 +119,37 @@
             
             <!-- Seção com conteúdo educacional sobre tipos e formatos de ficheiros -->
             <section class="conteudo-materia">
+                <!-- Ilustração SVG para Formatos de Ficheiros -->
+                <svg class="section-illustration" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Ficheiros representados -->
+                    <!-- Ficheiro JPG -->
+                    <rect x="30" y="40" width="80" height="100" fill="#4f46e5" opacity="0.2" stroke="#4f46e5" stroke-width="2" rx="5"/>
+                    <text x="70" y="120" font-size="18" fill="#4f46e5" text-anchor="middle" font-weight="bold">JPG</text>
+                    <text x="70" y="140" font-size="11" fill="#4f46e5" text-anchor="middle">Imagem</text>
+                    
+                    <!-- Ficheiro PNG -->
+                    <rect x="160" y="40" width="80" height="100" fill="#7c3aed" opacity="0.2" stroke="#7c3aed" stroke-width="2" rx="5"/>
+                    <text x="200" y="120" font-size="18" fill="#7c3aed" text-anchor="middle" font-weight="bold">PNG</text>
+                    <text x="200" y="140" font-size="11" fill="#7c3aed" text-anchor="middle">Imagem</text>
+                    
+                    <!-- Ficheiro SVG -->
+                    <rect x="290" y="40" width="80" height="100" fill="#db2777" opacity="0.2" stroke="#db2777" stroke-width="2" rx="5"/>
+                    <text x="330" y="120" font-size="18" fill="#db2777" text-anchor="middle" font-weight="bold">SVG</text>
+                    <text x="330" y="140" font-size="11" fill="#db2777" text-anchor="middle">Vetor</text>
+                    
+                    <!-- PDF -->
+                    <rect x="30" y="170" width="80" height="60" fill="#0891b2" opacity="0.2" stroke="#0891b2" stroke-width="2" rx="5"/>
+                    <text x="70" y="205" font-size="16" fill="#0891b2" text-anchor="middle" font-weight="bold">PDF</text>
+                    
+                    <!-- GIF -->
+                    <rect x="160" y="170" width="80" height="60" fill="#059669" opacity="0.2" stroke="#059669" stroke-width="2" rx="5"/>
+                    <text x="200" y="205" font-size="16" fill="#059669" text-anchor="middle" font-weight="bold">GIF</text>
+                    
+                    <!-- WebP -->
+                    <rect x="290" y="170" width="80" height="60" fill="#dc2626" opacity="0.2" stroke="#dc2626" stroke-width="2" rx="5"/>
+                    <text x="330" y="205" font-size="14" fill="#dc2626" text-anchor="middle" font-weight="bold">WebP</text>
+                </svg>
+                
                 <!-- Seção introdutória explicando conceitos básicos -->
                 <h2>O que é o Tipo de Formato e tipo de Ficheiro?</h2>
                 <p>O tipo de ficheiro é a forma como os dados são organizados (ex: .txt ou .jpg). O formato especifica como esses dados são codificados e estruturados para que um software possa interpretá-los.</p>

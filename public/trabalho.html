@@ -104,8 +104,14 @@
                     <span>Aumentar Espaçamento</span>
                 </label>
             </div>
-            
-            <!-- Botão para resetar todas as opções de acessibilidade aos valores padrão -->
+                        <!-- Opção 6: Leitura de Voz (Text-to-Speech) -->
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="text-to-speech" aria-label="Ativar leitura de voz do conteúdo da página">
+                    <span>Leitura de Voz</span>
+                </label>
+            </div>
+                        <!-- Botão para resetar todas as opções de acessibilidade aos valores padrão -->
             <div class="accessibility-option">
                 <button id="reset-accessibility" class="reset-btn">Restaurar Padrões</button>
             </div>
@@ -114,6 +120,44 @@
 
     <!-- Conteúdo principal da página com grid de trabalhos/projetos -->
     <main class="trabalhos-container" role="main" aria-label="Conteúdo principal: Portfólio de Projetos de Design">
+        <!-- Ilustração SVG da capa dos trabalhos -->
+        <svg class="hero-illustration" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Elementos representando as 6 matérias -->
+            <g>
+                <!-- Card 1: Fundamentos -->
+                <rect x="10" y="20" width="50" height="50" fill="#4f46e5" opacity="0.8" rx="5"/>
+                <text x="35" y="52" font-size="10" fill="white" text-anchor="middle" font-weight="bold">1</text>
+                
+                <!-- Card 2: Composição -->
+                <rect x="75" y="20" width="50" height="50" fill="#7c3aed" opacity="0.8" rx="5"/>
+                <text x="100" y="52" font-size="10" fill="white" text-anchor="middle" font-weight="bold">2</text>
+                
+                <!-- Card 3: Tipos -->
+                <rect x="140" y="20" width="50" height="50" fill="#db2777" opacity="0.8" rx="5"/>
+                <text x="165" y="52" font-size="10" fill="white" text-anchor="middle" font-weight="bold">3</text>
+                
+                <!-- Card 4: Espaço -->
+                <rect x="205" y="20" width="50" height="50" fill="#0891b2" opacity="0.8" rx="5"/>
+                <text x="230" y="52" font-size="10" fill="white" text-anchor="middle" font-weight="bold">4</text>
+                
+                <!-- Card 5: Tendências -->
+                <rect x="270" y="20" width="50" height="50" fill="#059669" opacity="0.8" rx="5"/>
+                <text x="295" y="52" font-size="10" fill="white" text-anchor="middle" font-weight="bold">5</text>
+                
+                <!-- Card 6: Acessibilidade -->
+                <rect x="335" y="20" width="50" height="50" fill="#dc2626" opacity="0.8" rx="5"/>
+                <text x="360" y="52" font-size="10" fill="white" text-anchor="middle" font-weight="bold">6</text>
+            </g>
+            
+            <!-- Linhas de conexão -->
+            <line x1="60" y1="100" x2="340" y2="100" stroke="#4f46e5" stroke-width="2" opacity="0.3"/>
+            
+            <!-- Elementos decorativos -->
+            <circle cx="100" cy="120" r="5" fill="#4f46e5" opacity="0.5"/>
+            <circle cx="200" cy="120" r="5" fill="#7c3aed" opacity="0.5"/>
+            <circle cx="300" cy="120" r="5" fill="#db2777" opacity="0.5"/>
+        </svg>
+        
         <!-- Título principal da página de trabalhos -->
         <h1>Matérias de Design de Interface</h1>
         
@@ -121,42 +165,66 @@
         <div class="trabalhos-grid">
             <!-- Card 1: Introdução ao Design de Interface -->
             <div class="trabalho-card">
-                <h3>1. Introdução ao Design</h3>
+                <!-- Ícone do card -->
+                <div class="card-icon" style="background: linear-gradient(135deg, #4f46e5 0%, #4f46e5 100%); opacity: 0.15;">
+                    <span class="work-card-number">1</span>
+                </div>
+                <h3>Introdução ao Design</h3>
                 <p>Fundamentos de UI/UX e o equilíbrio entre estética e função.</p>
                 <a href="../public/projeto1.html" class="trabalho-btn">Ler Matéria</a>
             </div>
             
             <!-- Card 2: Composição Visual -->
             <div class="trabalho-card">
-                <h3>2. Composição Visual</h3>
+                <!-- Ícone do card -->
+                <div class="card-icon" style="background: linear-gradient(135deg, #7c3aed 0%, #7c3aed 100%); opacity: 0.15;">
+                    <span class="work-card-number">2</span>
+                </div>
+                <h3>Composição Visual</h3>
                 <p>Equilíbrio, Contraste e Alinhamento na interface.</p>
                 <a href="../public/projeto2.html" class="trabalho-btn">Ler Matéria</a>
             </div>
             
             <!-- Card 3: Tipos e Formatos de Ficheiro -->
             <div class="trabalho-card">
-                <h3>3. Tipos e Formatos</h3>
+                <!-- Ícone do card -->
+                <div class="card-icon" style="background: linear-gradient(135deg, #db2777 0%, #db2777 100%); opacity: 0.15;">
+                    <span class="work-card-number">3</span>
+                </div>
+                <h3>Tipos e Formatos</h3>
                 <p>Diferenças entre Raster, Vetorial e extensões de ficheiro.</p>
                 <a href="../public/projeto3.html" class="trabalho-btn">Ler Matéria</a>
             </div>
             
             <!-- Card 4: Espaço Negativo -->
             <div class="trabalho-card">
-                <h3>4. Espaço Negativo</h3>
+                <!-- Ícone do card -->
+                <div class="card-icon" style="background: linear-gradient(135deg, #0891b2 0%, #0891b2 100%); opacity: 0.15;">
+                    <span class="work-card-number">4</span>
+                </div>
+                <h3>Espaço Negativo</h3>
                 <p>A importância do vazio e a hierarquia visual.</p>
                 <a href="../public/projeto4.html" class="trabalho-btn">Ler Matéria</a>
             </div>
             
             <!-- Card 5: Tendências Visuais Atuais -->
             <div class="trabalho-card">
-                <h3>5. Tendências Visuais</h3>
+                <!-- Ícone do card -->
+                <div class="card-icon" style="background: linear-gradient(135deg, #059669 0%, #059669 100%); opacity: 0.15;">
+                    <span class="work-card-number">5</span>
+                </div>
+                <h3>Tendências Visuais</h3>
                 <p>Maximalismo, Neomorfismo e estilos atuais.</p>
                 <a href="../public/projeto5.html" class="trabalho-btn">Ler Matéria</a>
             </div>
             
             <!-- Card 6: Acessibilidade Digital (WCAG 2.1) -->
             <div class="trabalho-card">
-                <h3>6. Acessibilidade</h3>
+                <!-- Ícone do card -->
+                <div class="card-icon" style="background: linear-gradient(135deg, #dc2626 0%, #dc2626 100%); opacity: 0.15;">
+                    <span class="work-card-number">6</span>
+                </div>
+                <h3>Acessibilidade</h3>
                 <p>Padrões WCAG e como criar interfaces inclusivas.</p>
                 <a href="../public/projeto6.html" class="trabalho-btn">Ler Matéria</a>
             </div>

@@ -104,8 +104,14 @@
                     <span>Aumentar Espaçamento</span>
                 </label>
             </div>
-            
-            <!-- Botão para resetar todas as opções de acessibilidade aos valores padrão -->
+                        <!-- Opção 6: Leitura de Voz (Text-to-Speech) -->
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="text-to-speech" aria-label="Ativar leitura de voz do conteúdo da página">
+                    <span>Leitura de Voz</span>
+                </label>
+            </div>
+                        <!-- Botão para resetar todas as opções de acessibilidade aos valores padrão -->
             <div class="accessibility-option">
                 <button id="reset-accessibility" class="reset-btn">Restaurar Padrões</button>
             </div>
@@ -116,6 +122,32 @@
     <main class="container" role="main" aria-label="Conteúdo principal: Sobre a Cadeira de Design de Interface">
         <!-- Seção contendo informações sobre a cadeira e jornada educacional -->
         <section class="sobre-conteudo" role="region" aria-label="Informações sobre a cadeira e jornada educacional">
+            <!-- Ilustração SVG da Jornada de Aprendizagem -->
+            <svg class="hero-illustration" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Timeline da jornada -->
+                <line x1="50" y1="100" x2="350" y2="100" stroke="#4f46e5" stroke-width="2"/>
+                
+                <!-- Etapa 1: Fundamentos -->
+                <circle cx="80" cy="100" r="15" fill="#4f46e5" opacity="0.8"/>
+                <text x="80" y="140" font-size="11" fill="#4f46e5" text-anchor="middle" font-weight="bold">Fundamentos</text>
+                
+                <!-- Etapa 2: Composição -->
+                <circle cx="150" cy="100" r="15" fill="#7c3aed" opacity="0.8"/>
+                <text x="150" y="140" font-size="11" fill="#7c3aed" text-anchor="middle" font-weight="bold">Composição</text>
+                
+                <!-- Etapa 3: Técnica -->
+                <circle cx="220" cy="100" r="15" fill="#db2777" opacity="0.8"/>
+                <text x="220" y="140" font-size="11" fill="#db2777" text-anchor="middle" font-weight="bold">Técnica</text>
+                
+                <!-- Etapa 4: Prática -->
+                <circle cx="290" cy="100" r="15" fill="#0891b2" opacity="0.8"/>
+                <text x="290" y="140" font-size="11" fill="#0891b2" text-anchor="middle" font-weight="bold">Prática</text>
+                
+                <!-- Etapa 5: Domínio -->
+                <circle cx="360" cy="100" r="15" fill="#059669" opacity="0.8"/>
+                <text x="360" y="140" font-size="11" fill="#059669" text-anchor="middle" font-weight="bold">Domínio</text>
+            </svg>
+            
             <!-- Título principal da página -->
             <h1>Sobre a Cadeira</h1>
             <!-- Introdução descrevendo a importância da cadeira de Design de Interface -->

@@ -96,6 +96,13 @@
                     <span>Aumentar Espaçamento</span>
                 </label>
             </div>
+            <!-- Opção para ativar leitura de voz (Text-to-Speech) -->
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="text-to-speech" aria-label="Ativar leitura de voz do conteúdo da página">
+                    <span>Leitura de Voz</span>
+                </label>
+            </div>
             <!-- Botão para restaurar todas as configurações aos valores padrão -->
             <div class="accessibility-option">
                 <button id="reset-accessibility" class="reset-btn" aria-label="Restaurar todas as configurações de acessibilidade aos valores padrão">Restaurar Padrões</button>
@@ -110,6 +117,23 @@
 
             <!-- Seção com conteúdo educacional da matéria -->
             <section class="conteudo-materia" role="region" aria-label="Conteúdo educacional sobre fundamentos do design">
+                <!-- Ilustração SVG para UI/UX Design Fundamentals -->
+                <svg class="section-illustration" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Wireframe de interface -->
+                    <rect x="30" y="20" width="340" height="200" fill="none" stroke="#4f46e5" stroke-width="2" rx="10"/>
+                    <rect x="40" y="30" width="320" height="40" fill="#4f46e5" opacity="0.1" rx="5"/>
+                    <line x1="40" y1="75" x2="360" y2="75" stroke="#4f46e5" stroke-width="1.5" opacity="0.3"/>
+                    
+                    <!-- Elementos de conteúdo -->
+                    <rect x="40" y="85" width="300" height="20" fill="#7c3aed" opacity="0.15" rx="3"/>
+                    <rect x="40" y="115" width="280" height="15" fill="#7c3aed" opacity="0.1" rx="3"/>
+                    <rect x="40" y="135" width="300" height="15" fill="#7c3aed" opacity="0.1" rx="3"/>
+                    
+                    <!-- Botão e interação -->
+                    <rect x="40" y="165" width="100" height="35" fill="#db2777" rx="5"/>
+                    <text x="90" y="188" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Explorar</text>
+                </svg>
+                
                 <!-- Título principal do artigo -->
                 <h1>Introdução ao Design</h1>
                 <!-- Parágrafo introdutório explicando conceitos de UI/UX Design -->

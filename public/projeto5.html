@@ -96,6 +96,13 @@
                     <span>Aumentar Espaçamento</span>
                 </label>
             </div>
+            <!-- Opção para ativar leitura de voz (Text-to-Speech) -->
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="text-to-speech" aria-label="Ativar leitura de voz do conteúdo da página">
+                    <span>Leitura de Voz</span>
+                </label>
+            </div>
             <!-- Botão para restaurar todas as configurações aos valores padrão -->
             <div class="accessibility-option">
                 <button id="reset-accessibility" class="reset-btn" aria-label="Restaurar todas as configurações de acessibilidade aos valores padrão">Restaurar Padrões</button>
@@ -112,6 +119,57 @@
             
             <!-- Seção com tendências e desafios de design -->
             <section class="conteudo-materia" role="region" aria-label="Tendências visuais atuais e desafios de design responsivo">
+                <!-- Ilustração SVG para Tendências Visuais -->
+                <svg class="section-illustration" viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Minimalismo -->
+                    <g>
+                        <text x="35" y="20" font-size="12" fill="#4f46e5" font-weight="bold">Minimalismo</text>
+                        <rect x="20" y="35" width="70" height="70" fill="none" stroke="#4f46e5" stroke-width="2" rx="4"/>
+                        <circle cx="55" cy="70" r="18" fill="#4f46e5" opacity="0.8"/>
+                    </g>
+                    
+                    <!-- Maximalismo -->
+                    <g>
+                        <text x="145" y="20" font-size="12" fill="#7c3aed" font-weight="bold">Maximalismo</text>
+                        <rect x="130" y="35" width="70" height="70" fill="#7c3aed" opacity="0.15" rx="4"/>
+                        <circle cx="150" cy="55" r="10" fill="#7c3aed" opacity="0.8"/>
+                        <circle cx="180" cy="55" r="10" fill="#db2777" opacity="0.8"/>
+                        <circle cx="160" cy="80" r="10" fill="#0891b2" opacity="0.8"/>
+                        <circle cx="185" cy="80" r="10" fill="#dc2626" opacity="0.8"/>
+                    </g>
+                    
+                    <!-- Retro-Futurismo -->
+                    <g>
+                        <text x="230" y="20" font-size="12" fill="#db2777" font-weight="bold">Retro-Futurismo</text>
+                        <rect x="240" y="35" width="70" height="70" fill="none" stroke="#db2777" stroke-width="2" stroke-dasharray="4,3" rx="4"/>
+                        <line x1="250" y1="50" x2="300" y2="50" stroke="#0891b2" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="250" y1="65" x2="300" y2="65" stroke="#0891b2" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="250" y1="80" x2="300" y2="80" stroke="#0891b2" stroke-width="1.5" opacity="0.6"/>
+                    </g>
+                    
+                    <!-- Responsividade -->
+                    <g>
+                        <text x="20" y="155" font-size="12" fill="#0891b2" font-weight="bold">Design</text>
+                        <text x="20" y="170" font-size="12" fill="#0891b2" font-weight="bold">Responsivo</text>
+                        <rect x="20" y="185" width="55" height="70" fill="none" stroke="#0891b2" stroke-width="1.8" rx="3"/>
+                        <rect x="45" y="185" width="35" height="70" fill="none" stroke="#0891b2" stroke-width="1.8" rx="3" opacity="0.6"/>
+                    </g>
+                    
+                    <!-- Acessibilidade -->
+                    <g>
+                        <text x="140" y="163" font-size="12" fill="#059669" font-weight="bold">Acessibilidade</text>
+                        <circle cx="165" cy="220" r="18" fill="none" stroke="#059669" stroke-width="2"/>
+                        <text x="165" y="228" font-size="22" text-anchor="middle" fill="#059669">♿</text>
+                    </g>
+                    
+                    <!-- Dark Mode -->
+                    <g>
+                        <text x="265" y="163" font-size="12" fill="#dc2626" font-weight="bold">Dark Mode</text>
+                        <rect x="250" y="185" width="60" height="70" fill="#1a1a1a" stroke="#dc2626" stroke-width="2" rx="4"/>
+                        <circle cx="280" cy="220" r="10" fill="white" opacity="0.9"/>
+                    </g>
+                </svg>
+                
                 <!-- Lista de tendências atuais em design de interfaces -->
                 <h2>Tendências Visuais Atuais</h2>
                 <p>O design de interfaces está em constante evolução. Abaixo estão alguns dos estilos visuais em alta:</p>

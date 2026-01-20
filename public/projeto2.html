@@ -96,6 +96,13 @@
                     <span>Aumentar Espaçamento</span>
                 </label>
             </div>
+            <!-- Opção para ativar leitura de voz (Text-to-Speech) -->
+            <div class="accessibility-option">
+                <label>
+                    <input type="checkbox" id="text-to-speech" aria-label="Ativar leitura de voz do conteúdo da página">
+                    <span>Leitura de Voz</span>
+                </label>
+            </div>
             <!-- Botão para restaurar todas as configurações aos valores padrão -->
             <div class="accessibility-option">
                 <button id="reset-accessibility" class="reset-btn" aria-label="Restaurar todas as configurações de acessibilidade aos valores padrão">Restaurar Padrões</button>
@@ -112,6 +119,26 @@
             
             <!-- Seção com conteúdo educacional sobre composição visual -->
             <section class="conteudo-materia">
+                <!-- Ilustração SVG para Composição Visual (Equilíbrio) -->
+                <svg class="section-illustration" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Base / Fulcro -->
+                    <rect x="170" y="200" width="60" height="30" fill="#0f172a" rx="3"/>
+                    <line x1="200" y1="200" x2="200" y2="180" stroke="#4f46e5" stroke-width="2"/>
+                    
+                    <!-- Elementos equilibrados -->
+                    <circle cx="120" cy="140" r="30" fill="#4f46e5" opacity="0.8"/>
+                    <circle cx="280" cy="140" r="30" fill="#7c3aed" opacity="0.8"/>
+                    <rect x="175" y="100" width="50" height="50" fill="#db2777" opacity="0.8" rx="5"/>
+                    
+                    <!-- Linhas de alinhamento -->
+                    <line x1="50" y1="200" x2="350" y2="200" stroke="#0891b2" stroke-width="1" stroke-dasharray="5,5" opacity="0.4"/>
+                    <line x1="200" y1="50" x2="200" y2="230" stroke="#0891b2" stroke-width="1" stroke-dasharray="5,5" opacity="0.4"/>
+                    
+                    <!-- Rótulos -->
+                    <text x="120" y="185" font-size="12" fill="#4f46e5" text-anchor="middle" font-weight="bold">Peso</text>
+                    <text x="280" y="185" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">Visual</text>
+                </svg>
+                
                 <!-- Parágrafo introdutório sobre os princípios fundamentais -->
                 <p>Os princípios de equilíbrio, contraste e alinhamento são fundamentais na composição visual. O equilíbrio refere-se à distribuição do peso visual para criar estabilidade; o contraste usa diferenças (cor, tamanho, etc.) para destacar elementos e criar interesse; e o alinhamento organiza elementos numa linha ou eixo para criar uma sensação de ordem e ligação visual.</p>
 

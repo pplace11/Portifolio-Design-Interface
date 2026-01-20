@@ -21,6 +21,30 @@
     --error: #dc2626;
     /* Cor de sucesso acessível */
     --success: #059669;
+    /* Cor de destaque emocional: Rosa/Magenta mais suave */
+    --accent: #db2777;
+    /* Cor de destaque secundária: Ciano reduzido */
+    --accent-secondary: #0891b2;
+    /* Cores emotivas para engajamento */
+    --joy: #f59e0b;
+    --love: #ec4899;
+    --energy: #ef4444;
+    --calm: #06b6d4;
+    /* Duração padrão de animações */
+    --duration: 0.4s;
+    /* Função de easing para animações suaves */
+    --ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Easing emotivo com bounce */
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Easing suave para entrada */
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    /* Espaçamento base para ritmo visual consistente */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
 }
 
 /* ===== RESET GLOBAL ===== */
@@ -29,6 +53,241 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* ===== KEYFRAMES PARA ANIMAÇÕES ===== */
+/* Animação de entrada: fade-in com slide up */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de hover: escala suave */
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/* Animação de pulse para atrair atenção */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Animação de glow: brilho ao redor */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    }
+    to {
+        box-shadow: 0 0 40px rgba(79, 70, 229, 0.8);
+    }
+}
+
+/* Animação de shimmer: efeito brilhante */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Animação de floating: movimento flutuante suave */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Animação de bounce suave com easing emocional */
+@keyframes softBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-8px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Animação de gradient shift: cores em movimento */
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Animação de rotate com escala suave */
+@keyframes rotateAndScale {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(5deg) scale(1.02);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Animação de ripple para botões e elementos interativos */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Animação de slide suave lateralmente */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== ANIMAÇÕES EMOTIVAS PARA ENGAJAMENTO ===== */
+/* Animação de heartbeat - pulso emocional */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10%, 30% {
+        transform: scale(1.1);
+    }
+    20%, 40% {
+        transform: scale(1.05);
+    }
+}
+
+/* Animação de celebração - shake com rotação */
+@keyframes celebrate {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(-5deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(5deg) scale(1.15);
+    }
+    75% {
+        transform: rotate(-3deg) scale(1.1);
+    }
+}
+
+/* Animação de arco-íris - gradient em movimento */
+@keyframes rainbow {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Animação de brilho suave */
+@keyframes gentleGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(79, 70, 229, 0.3), 0 0 40px rgba(79, 70, 229, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(79, 70, 229, 0.5), 0 0 60px rgba(79, 70, 229, 0.2);
+    }
+}
+
+/* Animação de ondulação - wave effect */
+@keyframes wave {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Animação de confetti - partículas de celebração */
+@keyframes confetti {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Animação de respiração - breathing effect */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Animação de zoom expressivo */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animação de flip card */
+@keyframes flip {
+    from {
+        transform: perspective(400px) rotateY(0);
+    }
+    to {
+        transform: perspective(400px) rotateY(360deg);
+    }
 }
 
 /* ===== ESTILO DO CORPO (BODY) ===== */
@@ -45,6 +304,20 @@ body {
     line-height: 1.6;
     /* Remove scroll horizontal em telas pequenas */
     overflow-x: hidden;
+    /* Smooth scroll behavior para melhor UX */
+    scroll-behavior: smooth;
+}
+
+/* Elementos principais com animação de entrada */
+header,
+main,
+footer {
+    animation: slideInUp 0.8s var(--ease) forwards;
+}
+
+/* Header com delay para efeito cascata */
+header {
+    animation-delay: 0s;
 }
 
 /* ===== NAVEGAÇÃO PRINCIPAL ===== */
@@ -58,17 +331,16 @@ nav {
     background: var(--glass);
     backdrop-filter: blur(10px);
     /* Centralização e largura responsiva */
-    margin: 0 auto;
-    width: 70%;
+    margin: var(--spacing-lg) auto;
+    width: 85%;
     max-width: 600px;
     /* Bordas arredondadas tipo pílula */
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: var(--spacing-sm) var(--spacing-md);
     /* Borda subtil */
-    border: 1px solid var(--border-glass);
+    border: 1px solid rgba(79, 70, 229, 0.15);
     /* Sombra suave */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Lista de links da navegação */
@@ -86,7 +358,21 @@ nav ul li a {
     font-size: 0.9rem;
     padding: 8px 15px;
     /* Transição suave ao hover */
-    transition: 0.3s;
+    transition: all var(--duration) var(--ease);
+    position: relative;
+}
+
+/* Efeito de underline animado nos links */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: translateX(-50%);
+    transition: width var(--duration) var(--ease);
 }
 
 /* Hover nos links da navegação: destaca com cor primária (contraste mínimo 4.5:1) */
@@ -94,6 +380,14 @@ nav ul li a:hover {
     color: var(--primary);
     background: rgba(79, 70, 229, 0.15);
     border-radius: 20px;
+    transform: translateY(-2px);
+    animation: softBounce 0.6s var(--ease);
+}
+
+/* Ativa o underline ao hover */
+nav ul li a:hover::after {
+    width: 70%;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
 }
 
 /* Estado de foco para navegação via teclado - WCAG 2.1 */
@@ -107,15 +401,15 @@ nav ul li a:focus {
 /* Container padrão para páginas gerais */
 .container {
     max-width: 1100px;
-    margin: 60px auto;
-    padding: 20px;
+    margin: var(--spacing-2xl) auto;
+    padding: var(--spacing-lg);
 }
 
 /* Container específico para página de trabalhos */
 .trabalhos-container {
     max-width: 1100px;
-    margin: 60px auto;
-    padding: 20px;
+    margin: var(--spacing-2xl) auto;
+    padding: var(--spacing-lg);
 }
 
 /* ===== CONTEÚDO DE PÁGINA SOBRE ===== */
@@ -123,8 +417,8 @@ nav ul li a:focus {
 .sobre-conteudo {
     display: flex;
     flex-direction: column;
-    /* Espaço consistente entre blocos de texto */
-    gap: 16px;
+    /* Espaço consistente entre blocos de texto usando spacing system */
+    gap: var(--spacing-lg);
 }
 
 /* Títulos h1 e h2 da seção sobre */
@@ -132,49 +426,85 @@ nav ul li a:focus {
 .sobre-conteudo h2 {
     text-align: center;
     /* Respiro abaixo dos títulos */
-    margin-bottom: 12px;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary);
+    font-weight: 700;
 }
 
 /* Espaçamento adicional para h1 */
 .sobre-conteudo h1 {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 /* Espaçamento adicional para h2 */
 .sobre-conteudo h2 {
-    margin-top: 18px;
+    margin-top: var(--spacing-lg);
+    font-size: 1.5rem;
+}
+
+/* Parágrafos na seção sobre */
+.sobre-conteudo p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
 /* Título principal da página de trabalhos */
 .trabalhos-container h1 {
     text-align: center;
     /* Dá espaço para os cards respirarem abaixo do título */
-    margin-bottom: 32px;
+    margin-bottom: var(--spacing-2xl);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--primary);
+    font-weight: 700;
 }
 
-/* Grid de trabalhos com espaçamento extra */
+/* Grid de trabalhos com espaçamento equilibrado */
 .trabalhos-grid {
-    gap: 32px;
+    gap: var(--spacing-lg);
 }
 
 /* ===== CABEÇALHO E GRID DE CARDS ===== */
 /* Seção de cabeçalho com conteúdo centralizado */
 header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    animation: slideInUp 0.8s var(--ease) 0s forwards;
 }
 
-/* Título h1 do cabeçalho com gradiente */
+/* Título h1 do cabeçalho com gradiente suave */
 header h1 {
     /* Tamanho responsivo: mínimo 1.8rem, 5vw ou máximo 3rem */
     font-size: clamp(1.8rem, 5vw, 3rem);
-    /* Gradiente de indigo a roxo */
-    background: linear-gradient(to right, var(--primary), var(--secondary));
+    /* Gradiente mais suave de indigo a roxo */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
     /* Aplica gradiente ao texto */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+    transition: transform var(--duration) var(--ease), letter-spacing var(--duration) var(--ease);
+    letter-spacing: -1px;
+    font-weight: 800;
+}
+
+/* Hover no h1 do header */
+header h1:hover {
+    transform: scale(1.03) translateY(-3px);
+    letter-spacing: 0px;
+}
+
+/* Parágrafo do header com espaçamento */
+header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    transition: color var(--duration) var(--ease);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* ===== GRID DE CARDS (Trabalhos e Blog) ===== */
@@ -184,7 +514,7 @@ header h1 {
     display: grid;
     /* Cria colunas com mínimo de 300px, dividindo espaço igualmente */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: var(--spacing-lg);
     /* Mantém todas as colunas na mesma altura */
     align-items: stretch;
 }
@@ -196,35 +526,113 @@ header h1 {
     /* Fundo com efeito glass */
     background: var(--glass);
     backdrop-filter: blur(5px);
-    /* Padding com mais espaço na base do card */
-    padding: 30px 30px 38px;
+    /* Padding balanceado com spacing system */
+    padding: var(--spacing-lg);
     /* Bordas arredondadas */
-    border-radius: 24px;
-    /* Borda sutil */
-    border: 1px solid var(--border-glass);
-    /* Sombra para profundidade */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-    /* Transição suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    /* Borda com gradiente sutil */
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    /* Sombra suave para profundidade equilibrada */
+    box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.06);
+    /* Transição suave com easing customizado */
+    transition: all var(--duration) var(--ease);
     /* Layout flexível em coluna */
     display: flex;
     flex-direction: column;
     /* Garante altura uniforme entre os cards */
     height: 100%;
+    /* Animação de entrada com delay baseado em ordem */
+    animation: slideInUp 0.8s var(--ease) forwards;
+    opacity: 0;
 }
 
-/* Hover nos cards: move para cima e aumenta sombra */
+/* Delay para animação em cascata dos cards */
+.card:nth-child(1),
+.trabalho-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2),
+.trabalho-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.card:nth-child(n+3),
+.trabalho-card:nth-child(n+3) {
+    animation-delay: calc(0.2s * (var(--index, 1)));
+}
+
+/* Hover nos cards: elevação suave com efeito equilibrado */
 .card:hover,
 .trabalho-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 40px -5px rgba(79, 70, 229, 0.22), 
+                0 0 30px rgba(79, 70, 229, 0.12);
+    border-color: rgba(79, 70, 229, 0.35);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    animation: gentleGlow 2s ease-in-out infinite;
 }
 
-/* Títulos h3 dentro dos cards */
+/* Efeito de hover emotivo com animação suave */
+.card:hover::before,
+.trabalho-card:hover::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--primary), 
+        var(--secondary), 
+        var(--accent), 
+        var(--primary));
+    background-size: 300% 300%;
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: gradientShift 3s ease infinite;
+}
+
+.card:hover::before,
+.trabalho-card:hover::before {
+    opacity: 0.3;
+}
+
+/* Posicionamento relativo para permitir pseudo-elementos */
+.card,
+.trabalho-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Texto do card com espaçamento adequado */
+.card p,
+.trabalho-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+}
+
+/* Títulos h3 dentro dos cards com gradiente sutil */
 .card h3,
 .trabalho-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.4rem;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.3rem;
+    color: var(--text-main);
+    font-weight: 700;
+    line-height: 1.5;
+    transition: transform var(--duration) var(--ease), color var(--duration) var(--ease);
+}
+
+/* Hover no título do card */
+.card:hover h3,
+.trabalho-card:hover h3 {
+    transform: translateX(4px);
+    color: var(--primary);
 }
 
 /* Botões dentro dos cards sempre no final */
@@ -240,98 +648,86 @@ header h1 {
 }
 
 /* ===== BOTÕES MODERNOS ===== */
+/* Estilo base para todos os botões com animações */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
 /* Botão de trabalho/artigo */
-.trabalho-btn{
-    display: inline-block;
-    color: #fff;
-    background: var(--primary);
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 500;
-    /* Alinhamento e espaçamento */
-    align-self: center;
-    margin-top: 1rem;
-    /* Sombra colorida */
-    transition: 0.3s;
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
-}
-
-/* Botão de índice/página inicial */
-.index-btn {
-    display: inline-block;
-    color: #fff;
-    background: var(--primary);
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 500;
-    align-self: center;
-    margin-top: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
-}
-
-/* Botão de voltar */
+.trabalho-btn,
+.index-btn,
 .btn-voltar {
     display: inline-block;
     color: #fff;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 10px;
     text-decoration: none;
     cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     align-self: center;
-    margin-top: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
+    margin-top: var(--spacing-md);
+    /* Sombra equilibrada */
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    transition: all var(--duration) var(--ease);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.3px;
+    will-change: transform, box-shadow;
 }
 
-/* Hover no botão de trabalho: muda para roxo */
-.trabalho-btn:hover{
-    background: var(--secondary);
-    box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.4);
+/* Efeito shimmer nos botões */
+.trabalho-btn::before,
+.index-btn::before,
+.btn-voltar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s var(--ease);
 }
 
-/* Focus no botão de trabalho para navegação por teclado - WCAG 2.1 */
-.trabalho-btn:focus {
-    outline: 3px solid var(--focus-ring);
-    outline-offset: 3px;
-}
-
-/* Hover no botão de índice: muda para roxo */
-.index-btn:hover{
-    background: var(--secondary);
-    box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.4);
-}
-
-/* Focus no botão de índice para navegação por teclado - WCAG 2.1 */
-.index-btn:focus {
-    outline: 3px solid var(--focus-ring);
-    outline-offset: 3px;
-}
-
-/* Hover no botão de voltar: muda para roxo */
+/* Hover nos botões: sombra e elevação com mais dramaticidade */
+.trabalho-btn:hover,
+.index-btn:hover,
 .btn-voltar:hover {
-    background: var(--secondary);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(79, 70, 229, 0.45);
+    letter-spacing: 0.5px;
 }
 
-/* Focus no botão de voltar para navegação por teclado - WCAG 2.1 */
+/* Ativa shimmer ao hover com mais brilho */
+.trabalho-btn:hover::before,
+.index-btn:hover::before,
+.btn-voltar:hover::before {
+    left: 100%;
+    animation: shimmer 0.6s var(--ease);
+}
+
+/* Active state do botão com feedback tátil */
+.trabalho-btn:active,
+.index-btn:active,
+.btn-voltar:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Focus no botão para navegação por teclado - WCAG 2.1 */
+.trabalho-btn:focus,
+.index-btn:focus,
 .btn-voltar:focus {
     outline: 3px solid var(--focus-ring);
     outline-offset: 3px;
-    box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.4);
 }
 
 /* ===== PÁGINA DE CONTEÚDO (BLOG POST) ===== */
@@ -339,10 +735,21 @@ header h1 {
 .post-blog {
     /* Fundo branco para melhor contraste com o texto */
     background: white;
-    padding: 50px;
-    border-radius: 30px;
-    /* Sombra significativa para elevação visual */
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+    padding: var(--spacing-2xl);
+    border-radius: 24px;
+    /* Sombra equilibrada */
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+    /* Animação de entrada */
+    animation: slideInUp 0.8s var(--ease) 0.2s forwards;
+    opacity: 0;
+    /* Borda sutil com cor primária */
+    border: 1px solid rgba(79, 70, 229, 0.08);
+    transition: box-shadow var(--duration) var(--ease);
+}
+
+/* Hover no post-blog para mais interação suave */
+.post-blog:hover {
+    box-shadow: 0 16px 32px -8px rgba(79, 70, 229, 0.12);
 }
 
 /* Título da matéria/blog post */
@@ -396,14 +803,18 @@ nav {
     width: auto;
     display: block;
     /* Transição suave ao hover */
-    transition: transform 0.3s ease;
+    transition: all var(--duration) var(--ease);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
-/* Hover no logo: amplia um pouco */
+/* Hover no logo: amplia um pouco e gira levemente */
 .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(2deg);
+    filter: drop-shadow(0 8px 12px rgba(79, 70, 229, 0.3));
 }
 
+/* ===== RODAPÉ ===== */
+/* Estilos gerais do rodapé */
 /* ===== RODAPÉ ===== */
 /* Estilos gerais do rodapé */
 footer {
@@ -411,37 +822,48 @@ footer {
     background: var(--glass);
     backdrop-filter: blur(10px);
     /* Borda superior sutil */
-    border-top: 1px solid var(--border-glass);
-    /* Espaçamento superior */
-    margin-top: 80px;
-    padding: 40px 20px 20px;
+    border-top: 1px solid rgba(79, 70, 229, 0.15);
+    /* Espaçamento superior equilibrado */
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    /* Animação de entrada */
+    animation: slideInUp 0.8s var(--ease) 0.3s forwards;
+    opacity: 0;
 }
 
 /* Container do rodapé com grid responsivo */
 .footer-container {
     max-width: 1100px;
-    margin: 0 auto 40px;
+    margin: 0 auto var(--spacing-xl);
     /* Grid que se adapta: mínimo 250px de coluna */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    padding: 0 20px;
+    gap: var(--spacing-xl);
+    padding: 0 var(--spacing-lg);
 }
 
 /* Títulos das seções do rodapé com cor primária */
 .footer-section h3 {
     color: var(--primary);
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    transition: all var(--duration) var(--ease);
+}
+
+/* Hover no título do rodapé */
+.footer-section h3:hover {
+    color: var(--secondary);
+    transform: translateX(2px);
 }
 
 /* Parágrafos do rodapé */
 .footer-section p {
-    color: var(--text-main);
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
     line-height: 1.6;
+    transition: color var(--duration) var(--ease);
 }
 
 /* Lista de links do rodapé */
@@ -451,21 +873,40 @@ footer {
 
 /* Itens de lista no rodapé */
 .footer-section ul li {
-    margin-bottom: 8px;
+    margin-bottom: var(--spacing-sm);
+    transition: transform var(--duration) var(--ease);
 }
 
-/* Links do rodapé */
+/* Links do rodapé com efeito de sublinhado */
 .footer-section ul li a {
     color: var(--text-main);
     text-decoration: none;
     font-size: 0.9rem;
-    transition: 0.3s;
+    transition: all var(--duration) var(--ease);
+    position: relative;
+    padding-bottom: 2px;
 }
 
-/* Hover nos links do rodapé: muda cor e indenta */
+/* Sublinhado animado nos links do rodapé */
+.footer-section ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: width var(--duration) var(--ease);
+}
+
+/* Hover nos links do rodapé: muda cor e anima */
 .footer-section ul li a:hover {
     color: var(--primary);
-    padding-left: 5px;
+    transform: translateX(3px);
+}
+
+.footer-section ul li a:hover::after {
+    width: 100%;
 }
 
 /* Rodapé inferior com copyright */
@@ -486,7 +927,7 @@ footer {
     margin-top: 15px;
 }
 
-/* Links individuais de redes sociais */
+/* Links individuais de redes sociais com efeitos */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -494,17 +935,39 @@ footer {
     width: 40px;
     height: 40px;
     color: var(--primary);
-    transition: 0.3s;
+    transition: all var(--duration) var(--ease);
     /* Círculo para ícones */
     border-radius: 50%;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(79, 70, 229, 0.1);
+    position: relative;
+    overflow: hidden;
+    will-change: transform, background;
 }
 
-/* Hover nas redes sociais: muda cor e amplia */
+/* Efeito de fundo ao hover */
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.4) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s var(--ease), height 0.5s var(--ease);
+}
+
+/* Hover nas redes sociais: muda cor, amplia e cria efeito ripple */
 .social-links a:hover {
-    color: var(--secondary);
-    background: rgba(168, 85, 247, 0.2);
-    transform: scale(1.1);
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    transform: scale(1.2) rotate(8deg);
+    box-shadow: 0 10px 28px rgba(236, 72, 153, 0.4);
+}
+
+.social-links a:hover::before {
+    width: 120px;
+    height: 120px;
 }
 
 nav ul {
@@ -513,7 +976,80 @@ nav ul {
     gap: 10px;
 }
 
-/* ===== RESPONSIVIDADE GERAL ===== */
+/* ===== ILUSTRAÇÕES E GRÁFICOS SVG ===== */
+/* Ilustração Hero na página inicial */
+.hero-illustration {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto var(--spacing-lg);
+    display: block;
+    animation: slideInUp 0.8s var(--ease) 0.1s forwards;
+    opacity: 0;
+}
+
+/* Ilustrações em seções de conteúdo */
+.section-illustration {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 0 var(--spacing-lg) 0;
+    display: block;
+    animation: slideInUp 0.8s var(--ease) 0.2s forwards;
+    opacity: 0;
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    background: rgba(79, 70, 229, 0.05);
+}
+
+/* Animação de elementos SVG flutuantes */
+@keyframes float-circle {
+    0%, 100% {
+        transform: translateY(0px);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.15;
+    }
+}
+
+.float-circle {
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Elementos de design que respiram */
+.design-element {
+    animation: slideInUp 1s var(--ease) 0.3s forwards;
+    opacity: 0;
+}
+
+.breathing-element {
+    animation: slideInUp 1s var(--ease) 0.4s forwards;
+    opacity: 0;
+}
+
+/* Card com ícone visual SVG integrado */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: 12px;
+    animation: scaleUp var(--duration) var(--ease);
+}
+
+.work-card-number {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 /* Tablet - Paisagem (até 1024px) */
 @media (max-width: 1024px) {
     /* Navegação em telas menores */
@@ -801,28 +1337,38 @@ nav ul {
     right: 30px;
     width: 60px;
     height: 60px;
-    /* Fundo com cor primária de alto contraste */
-    background: var(--primary);
+    /* Fundo com gradiente animado */
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     border: none;
     /* Formato circular */
     border-radius: 50%;
     color: white;
     cursor: pointer;
     /* Sombra colorida */
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.5), 0 0 20px rgba(236, 72, 153, 0.2);
     /* Transição suave */
-    transition: all 0.3s ease;
+    transition: all var(--duration) var(--ease);
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: floating 3s ease-in-out infinite;
+    will-change: transform;
 }
 
-/* Hover no botão de acessibilidade */
+/* Hover no botão de acessibilidade com efeito dramático */
 #accessibility-btn:hover {
-    background: var(--secondary);
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+    transform: scale(1.15) rotate(10deg) translateY(-5px);
+    box-shadow: 0 12px 32px rgba(79, 70, 229, 0.6), 
+                0 0 28px rgba(236, 72, 153, 0.35),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    animation: none;
+}
+
+/* Active state com feedback imediato */
+#accessibility-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
 }
 
 /* Focus para acessibilidade via teclado - WCAG 2.1 AAA */
@@ -843,17 +1389,26 @@ nav ul {
     max-width: 90vw;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    /* Sombra dramaticamente melhorada */
+    box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.15), 
+                0 0 30px rgba(79, 70, 229, 0.15);
     z-index: 1000;
-    /* Transição suave ao aparecer */
-    transition: right 0.4s ease;
+    /* Transição suave e rápida */
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     max-height: 90vh;
     overflow-y: auto;
+    border: 1px solid rgba(79, 70, 229, 0.12);
+    opacity: 0;
 }
 
-/* Painel quando ativo: desliza para dentro */
+/* Painel quando ativo: desliza para dentro com efeito rápido */
 .accessibility-panel.active {
     right: 20px;
+    opacity: 1;
+    box-shadow: -15px 15px 50px rgba(0, 0, 0, 0.22), 
+                0 0 60px rgba(79, 70, 229, 0.25),
+                inset 0 2px 8px rgba(79, 70, 229, 0.08);
+    animation: slideInLeft 0.3s var(--ease);
 }
 
 /* Cabeçalho do painel com gradiente */
@@ -876,7 +1431,7 @@ nav ul {
     color: white;
 }
 
-/* Botão de fechar (X) */
+/* Botão de fechar (X) com efeito emocional */
 #close-accessibility {
     background: transparent;
     border: none;
@@ -889,25 +1444,49 @@ nav ul {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: background 0.3s;
+    transition: all var(--duration) var(--ease);
+    will-change: transform, background;
 }
 
-/* Hover no botão de fechar */
+/* Hover no botão de fechar com mais dramaticidade */
 #close-accessibility:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg) scale(1.15);
 }
 
-/* Conteúdo do painel */
+/* Focus para acessibilidade via teclado */
+#close-accessibility:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Conteúdo do painel com animação de entrada dramática */
 .accessibility-content {
     padding: 25px;
+    animation: slideInUp 0.8s var(--ease) 0.1s forwards;
+    opacity: 0;
 }
 
-/* Cada opção de acessibilidade */
+.accessibility-panel.active .accessibility-content {
+    animation-delay: 0.2s;
+    opacity: 1;
+}
+
+/* Cada opção de acessibilidade com micro-interação */
 .accessibility-option {
     margin-bottom: 20px;
+    transition: transform var(--duration) var(--ease), 
+                background var(--duration) var(--ease);
+    padding: 10px;
+    border-radius: 10px;
 }
 
-/* Label para checkboxes */
+.accessibility-option:hover {
+    transform: translateX(4px);
+    background: rgba(79, 70, 229, 0.05);
+}
+
+/* Label para checkboxes com efeito hover envolvente */
 .accessibility-option label {
     display: flex;
     align-items: center;
@@ -915,14 +1494,27 @@ nav ul {
     color: var(--text-main);
     cursor: pointer;
     gap: 10px;
+    transition: color var(--duration) var(--ease), letter-spacing var(--duration) var(--ease);
+    font-weight: 500;
 }
 
-/* Checkboxes com cor primária */
+.accessibility-option label:hover {
+    color: var(--primary);
+    letter-spacing: 0.3px;
+}
+
+/* Checkboxes com cor primária e animação suave */
 .accessibility-option input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
     accent-color: var(--primary);
+    transition: all var(--duration) var(--ease);
+}
+
+.accessibility-option input[type="checkbox"]:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 2px 4px rgba(79, 70, 229, 0.3));
 }
 
 /* ===== GRUPO DE BOTÕES DE ACESSIBILIDADE ===== */
@@ -933,44 +1525,78 @@ nav ul {
     margin-top: 10px;
 }
 
-/* Botões dentro do grupo */
+/* Botões dentro do grupo com efeitos emocionais */
 .btn-group button {
     flex: 1;
     padding: 10px;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all var(--duration) var(--ease);
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
 }
 
-/* Hover nos botões do grupo */
+/* Efeito de ripple nos botões do grupo */
+.btn-group button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s var(--ease), height 0.5s var(--ease);
+}
+
+/* Hover nos botões do grupo com elevação */
 .btn-group button:hover {
-    background: var(--secondary);
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 28px rgba(79, 70, 229, 0.45);
 }
 
-/* Botão de reset de acessibilidade */
+.btn-group button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Active state feedback */
+.btn-group button:active {
+    transform: translateY(-1px) scale(0.96);
+}
+
+/* Botão de reset de acessibilidade com efeito emocional */
 .reset-btn {
     width: 100%;
     padding: 12px;
-    background: #e74c3c;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all var(--duration) var(--ease);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Hover no botão reset */
+/* Hover no botão reset com mais dramaticidade */
 .reset-btn:hover {
-    background: #c0392b;
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.4);
+}
+
+/* Active state do botão reset */
+.reset-btn:active {
+    transform: translateY(-1px);
 }
 
 /* ===== ESTADOS DE ACESSIBILIDADE ===== */
@@ -1078,6 +1704,42 @@ body.dark-mode .trabalho-btn:hover,
 body.dark-mode .index-btn:hover,
 body.dark-mode .btn-voltar:hover {
     background: #1d4ed8 !important;
+}
+
+/* Logo em modo escuro - inverte cores para melhor legibilidade */
+body.dark-mode .logo img {
+    filter: invert(1) brightness(1.2) drop-shadow(0 4px 6px rgba(255, 255, 255, 0.1));
+}
+
+body.dark-mode .logo img:hover {
+    filter: invert(1) brightness(1.2) drop-shadow(0 8px 12px rgba(96, 165, 250, 0.3));
+}
+
+/* Títulos em modo escuro - melhor contraste e legibilidade */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #f1f5f9 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+}
+
+/* Títulos dos cards em modo escuro */
+body.dark-mode .card h3,
+body.dark-mode .trabalho-card h3 {
+    color: #93c5fd !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+}
+
+body.dark-mode .card:hover h3,
+body.dark-mode .trabalho-card:hover h3 {
+    color: #60a5fa !important;
 }
 
 /* Focus em modo escuro */
@@ -1226,4 +1888,232 @@ body.increased-spacing li {
     .footer-section h3 {
         font-size: 1rem;
     }
+}
+
+/* ===== MICRO-INTERAÇÕES EMOCIONAIS AVANÇADAS ===== */
+
+/* Efeito de brilho deslizante nos cards ao hover */
+.card::after,
+.trabalho-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card:hover::after,
+.trabalho-card:hover::after {
+    left: 100%;
+}
+
+/* Animação de respiração nos ícones dos cards */
+.card-icon {
+    animation: breathing 3s ease-in-out infinite;
+}
+
+@keyframes breathing {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.08); opacity: 0.28; }
+}
+
+/* Efeito parallax suave nos SVGs hero ao movimento da página */
+.hero-illustration {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+/* Efeito de glow pulsante nos títulos principais */
+h1 {
+    animation: subtleGlow 4s ease-in-out infinite;
+}
+
+@keyframes subtleGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(79, 70, 229, 0.08); }
+    50% { text-shadow: 0 0 35px rgba(79, 70, 229, 0.18); }
+}
+
+/* Hover dramático no logo com rotação */
+.logo img {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                filter 0.4s var(--ease);
+}
+
+.logo:hover img {
+    transform: rotate(8deg) scale(1.12);
+    filter: drop-shadow(0 6px 12px rgba(79, 70, 229, 0.35));
+}
+
+/* Efeito de highlight personalizado ao selecionar texto */
+::selection {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+::-moz-selection {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação em cascata para conteúdo das matérias */
+.conteudo-materia h2,
+.conteudo-materia h3,
+.conteudo-materia p,
+.conteudo-materia ul {
+    animation: slideInLeft 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+.conteudo-materia h2 { animation-delay: 0.15s; }
+.conteudo-materia h3 { animation-delay: 0.25s; }
+.conteudo-materia p { animation-delay: 0.35s; }
+.conteudo-materia ul { animation-delay: 0.45s; }
+
+/* Efeito hover nas ilustrações SVG de seção */
+.section-illustration {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.4s var(--ease),
+                background 0.3s var(--ease);
+    cursor: pointer;
+}
+
+.section-illustration:hover {
+    transform: scale(1.03) translateY(-8px);
+    box-shadow: 0 15px 40px rgba(79, 70, 229, 0.18);
+    background: rgba(79, 70, 229, 0.08);
+}
+
+/* Efeito de ripple ao clicar nos botões */
+.trabalho-btn::after,
+.index-btn::after,
+.btn-voltar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                height 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.5s var(--ease);
+    opacity: 0;
+}
+
+.trabalho-btn:active::after,
+.index-btn:active::after,
+.btn-voltar:active::after {
+    width: 350px;
+    height: 350px;
+    opacity: 1;
+}
+
+/* Efeito de elevação nos links de navegação */
+nav ul li a {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                color 0.3s var(--ease);
+}
+
+nav ul li a:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Scroll suave em toda a página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Efeito de foco emocional melhorado */
+.accessibility-content button:focus,
+.accessibility-content input:focus,
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 4px;
+    transform: scale(1.06);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 0 8px rgba(79, 70, 229, 0.1);
+}
+
+/* Animação de entrada para o footer */
+footer {
+    animation: slideInUp 0.9s var(--ease) 0.4s forwards;
+    opacity: 0;
+}
+
+/* Efeito hover nos títulos dos cards com gradiente animado */
+.card h3,
+.trabalho-card h3 {
+    background: linear-gradient(135deg, var(--text-main), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    transition: background-position 0.5s var(--ease);
+}
+
+.card:hover h3,
+.trabalho-card:hover h3 {
+    background-position: 100% 100%;
+}
+
+/* Efeito de shake suave para feedback visual */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+/* Efeito de bounce nos números dos cards */
+.work-card-number {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.trabalho-card:hover .work-card-number {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Animação de pulso suave no botão de acessibilidade */
+#accessibility-btn {
+    animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+    }
+}
+
+/* Efeito de ondulação no hover dos círculos flutuantes SVG */
+.float-circle {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.3s var(--ease);
+}
+
+.hero-illustration:hover .float-circle {
+    transform: scale(1.15);
+    opacity: 0.25;
+}
+
+/* Transição suave de cores no modo escuro/alto contraste */
+body,
+.card,
+.trabalho-card,
+nav,
+footer {
+    transition: background-color 0.4s var(--ease),
+                color 0.4s var(--ease);
 }

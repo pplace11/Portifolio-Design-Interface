@@ -328,6 +328,13 @@ if (resetAccessibilityBtn) {
         if (highlightLinksCheck) highlightLinksCheck.checked = false;
         if (lineHeightCheck) lineHeightCheck.checked = false;
         
+        /* Parar leitura de voz se estiver ativa */
+        const textToSpeechCheck = document.getElementById('text-to-speech');
+        if (textToSpeechCheck) {
+            textToSpeechCheck.checked = false;
+            stopSpeech();
+        }
+        
         /* Limpar dados do localStorage */
         localStorage.removeItem('accessibilityPreferences');
         
@@ -336,6 +343,162 @@ if (resetAccessibilityBtn) {
     });
 }
 
+/* ===== FUNCIONALIDADE DE LEITURA DE VOZ (TEXT-TO-SPEECH) ===== */
+/* Usa Web Speech API para ler o conteúdo da página em voz alta */
+
+// Variáveis globais para controle de voz
+let speechSynthesis = window.speechSynthesis;
+let currentUtterance = null;
+let isSpeaking = false;
+let selectedElements = [];
+
+// Função para parar a leitura
+function stopSpeech() {
+    if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+    }
+    isSpeaking = false;
+    // Remover destaques visuais
+    selectedElements.forEach(el => {
+        el.style.outline = '';
+        el.style.backgroundColor = '';
+    });
+    selectedElements = [];
+}
+
+// Função para ler texto
+function speakText(text, element) {
+    if (!text || text.trim() === '') return;
+    
+    // Cancelar leitura anterior se houver
+    if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+    }
+    
+    // Criar nova instância de leitura
+    currentUtterance = new SpeechSynthesisUtterance(text);
+    
+    // Configurações de voz
+    currentUtterance.lang = 'pt-PT'; // Português de Portugal
+    currentUtterance.rate = 0.9; // Velocidade (0.1 a 10)
+    currentUtterance.pitch = 1; // Tom (0 a 2)
+    currentUtterance.volume = 1; // Volume (0 a 1)
+    
+    // Destacar elemento sendo lido
+    if (element) {
+        element.style.outline = '3px solid var(--primary)';
+        element.style.backgroundColor = 'rgba(79, 70, 229, 0.1)';
+        selectedElements.push(element);
+    }
+    
+    // Eventos de controle
+    currentUtterance.onend = () => {
+        isSpeaking = false;
+        if (element) {
+            element.style.outline = '';
+            element.style.backgroundColor = '';
+        }
+    };
+    
+    currentUtterance.onerror = (event) => {
+        console.error('Erro na leitura de voz:', event);
+        isSpeaking = false;
+    };
+    
+    // Iniciar leitura
+    speechSynthesis.speak(currentUtterance);
+    isSpeaking = true;
+}
+
+// Função para ler o conteúdo principal da página
+function readPageContent() {
+    // Selecionar elementos para leitura (priorizar conteúdo principal)
+    const mainContent = document.querySelector('main') || document.body;
+    const elementsToRead = mainContent.querySelectorAll('h1, h2, h3, p, li, button, a');
+    
+    let textToRead = '';
+    elementsToRead.forEach(el => {
+        // Ignorar elementos ocultos ou do painel de acessibilidade
+        if (el.offsetParent !== null && !el.closest('#accessibility-panel')) {
+            const text = el.textContent.trim();
+            if (text) {
+                textToRead += text + '. ';
+            }
+        }
+    });
+    
+    if (textToRead) {
+        speakText(textToRead, mainContent);
+    }
+}
+
+// Adicionar evento ao checkbox de Text-to-Speech
+const textToSpeechCheck = document.getElementById('text-to-speech');
+if (textToSpeechCheck) {
+    textToSpeechCheck.addEventListener('change', function() {
+        if (this.checked) {
+            // Verificar suporte do navegador
+            if (!('speechSynthesis' in window)) {
+                alert('Desculpe, seu navegador não suporta leitura de voz. Tente usar Chrome, Edge ou Firefox.');
+                this.checked = false;
+                return;
+            }
+            
+            // Ativar modo de leitura
+            isSpeaking = true;
+            
+            // Ler conteúdo da página
+            readPageContent();
+            
+            // Adicionar listeners para ler ao passar o mouse (opcional)
+            document.querySelectorAll('h1, h2, h3, p, button, a').forEach(el => {
+                el.addEventListener('mouseenter', function(e) {
+                    if (isSpeaking && textToSpeechCheck.checked) {
+                        const text = this.textContent.trim();
+                        if (text && !this.closest('#accessibility-panel')) {
+                            speakText(text, this);
+                        }
+                    }
+                });
+            });
+            
+            // Feedback ao usuário
+            console.log('Leitura de voz ativada. Passe o mouse sobre os elementos para ouvir.');
+            
+        } else {
+            // Desativar e parar leitura
+            stopSpeech();
+        }
+        
+        saveAccessibilityPreferences();
+    });
+}
+
+// Adicionar suporte a teclas de atalho para leitura de voz
+document.addEventListener('keydown', (e) => {
+    // Ctrl + Shift + S = Parar leitura
+    if (e.ctrlKey && e.shiftKey && e.key === 'S') {
+        e.preventDefault();
+        const textToSpeechCheck = document.getElementById('text-to-speech');
+        if (textToSpeechCheck && textToSpeechCheck.checked) {
+            stopSpeech();
+            textToSpeechCheck.checked = false;
+            saveAccessibilityPreferences();
+        }
+    }
+    
+    // Ctrl + Shift + R = Ler página
+    if (e.ctrlKey && e.shiftKey && e.key === 'R') {
+        e.preventDefault();
+        const textToSpeechCheck = document.getElementById('text-to-speech');
+        if (textToSpeechCheck) {
+            textToSpeechCheck.checked = true;
+            textToSpeechCheck.dispatchEvent(new Event('change'));
+        }
+    }
+});
+
 /* ===== INICIALIZAÇÃO ===== */
 /* Carregar preferências salvas ao iniciar a página */
 loadAccessibilityPreferences();
+
